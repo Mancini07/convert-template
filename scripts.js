@@ -33,13 +33,19 @@ form.addEventListener("submit", (event)=>{
     }
 })
 
+/**
+ * 
+ * @param {Number} amount 
+ * @param {Number} price 
+ * @param {String} symbol 
+ */
+
 function convertCurrency(amount, price, symbol){
     try {
         description.textContent = `${symbol} 1 = ${formatCurrency(price)}`
 
         let total = amount * price
         total = formatCurrency(total).replace("R$", "")
-
         result.textContent = `${total} Reais`
 
         footer.classList.add("show-result")
